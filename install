@@ -1,0 +1,29 @@
+#/bin/bash
+
+mysqluser="root"
+mysqlpass="password"
+
+ip = IP
+address='http:\/\/$ip\/wordpress'
+
+array=( 
+  'Vagrantfile'
+  'scripts/vhosts.sh'
+  'scripts/wordpress.sh'
+  'wordpress_default.sql'
+  )
+
+for file in "${array[@]}"
+do
+  echo $file
+  if [ $file==Vagrantfile ] || [ $file==scripts/vhosts.sh ]
+  then
+    sed -i "s/URLGOESHERE/$ip/g" $file
+  else
+    sed -i "s/URLGOESHERE/$address/g" $file
+  fi
+  echo "done"
+done
+
+
+vagrant up

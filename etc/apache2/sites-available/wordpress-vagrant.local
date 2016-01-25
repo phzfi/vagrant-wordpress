@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName wordpress-vagrant.local
+
+    DocumentRoot /vagrant/public_html
+    <Directory /vagrant/public_html>
+        Options FollowSymLinks Includes +Indexes +MultiViews
+        DirectoryIndex index.php
+        AddType application/x-httpd-php .php
+        AllowOverride All
+        Order allow,deny
+        Allow from All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
