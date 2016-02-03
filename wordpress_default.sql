@@ -365,7 +365,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'admin','$P$BzJhfUYByp2Rnl8SZAbFfZdbHW7EFe.','admin','test@example.com','','2015-03-10 08:49:44','',0,'admin');
+INSERT INTO `wp_users` VALUES (1,'admin','5f4dcc3b5aa765d61d8327deb882cf99','admin','test@example.com','','2015-03-10 08:49:44','',0,'admin');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
